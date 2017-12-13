@@ -13,8 +13,13 @@ package model;
 public class Person
 {
 	private Nationality nationality;
-	private Amount amount;
+	private double amount;
 
+	
+	public Person(Nationality nat, double amt) {
+		this.setNationality(nat);
+		this.setAmount(amt);
+	}
 	/**
 	 * @return the nationality
 	 */
@@ -35,7 +40,7 @@ public class Person
 	/**
 	 * @return the amount
 	 */
-	public Amount getAmount()
+	public double getAmount()
 	{
 		return amount; // hier conversie doen (via adapter/muntconversie) van euro naar originele
 						// currency (amount staat al in euro door setter)
@@ -45,7 +50,7 @@ public class Person
 	 * @param amount
 	 *            the amount to set
 	 */
-	public void setAmount(Amount amount)
+	public void setAmount(double amount)
 	{
 		this.amount = amount; // hier conversie doen van originele currency van persoon naar euro
 	}

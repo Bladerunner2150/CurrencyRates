@@ -14,6 +14,7 @@ public class Nationality
 {
 	private String nationality;
 	private String language;
+	private String currency;
 
 	/**
 	 * @return the nationality
@@ -48,5 +49,24 @@ public class Nationality
 	{
 		this.language = language;
 	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Nationality [getNationality()=" + getNationality() + ", getLanguage()=" + getLanguage()
+				+ ", getCurrency()=" + getCurrency() + "]";
+	}
+	
+	
 
 }
