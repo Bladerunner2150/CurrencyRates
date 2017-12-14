@@ -23,28 +23,56 @@ public class TestOpdracht7
 {
 	private static Random random = new Random();
 	private static AmountAdapter adapter = new AmountAdapter();
-	
+	private static LinkedList<Person> persons;
+	private static LinkedList<Person> personsInEur;
+	private static LinkedList<Person> personsInOwnCurrency;
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args)
 	{
-		// TODO method to show person with own currency
-		// TODO method to show person with currency in EUR
 		// TODO method to change person to new nationality
 		
-		LinkedList<Person> persons = new LinkedList<Person>();
-		
+		persons = generatePersonlist();	
+		personsInEur = generatePersonlistInEur(persons);	
+		personsInOwnCurrency = revertBackToOwnCurrency(personsInEur);
+		System.out.println("Generated list:" + System.lineSeparator() + persons);	
+		System.out.println("List of people with conversion to EUR:" + System.lineSeparator() + personsInEur);
+		System.out.println("List of people back to own Currency:" + System.lineSeparator() + personsInOwnCurrency);
+	}
+	
+	
+	//generate list with Persons
+	public static LinkedList<Person> generatePersonlist(){
+		LinkedList<Person> personList= new LinkedList<Person>();
 		for (int i = 0; i < 10; i++) {
-			persons.add(generatePerson());
+			personList.add(generatePerson());
 		}
-		
-		for (Person person : persons) {
-			Double euro = getCurrencyEuro(person);
-			System.out.println(person.toString() + getOwnCurrency(euro) + " - EUR: " + euro);
+		return personList;
+	}
+	
+	//generate list with Persons but currency set in EUR + amount = EUR equivalent
+	public static LinkedList<Person> generatePersonlistInEur(LinkedList<Person> pl){
+		LinkedList<Person> personList= new LinkedList<Person>();
+		Person p;
+		for (Person person : pl) {
+			p = PersonFactory.CreatePerson((person.getNationality().getNationality()), getCurrencyEuro(person));// keep nationality but change amount to euro equivalent
+			p.getNationality().setCurrency("EUR");// set currency to eur
+			personList.add(p);
 		}
-		
+		return personList;
+	}
+	//generate list with Persons where currency and amount is reverted back to own currency
+	public static LinkedList<Person> revertBackToOwnCurrency(LinkedList<Person> pl){
+		LinkedList<Person> personList= new LinkedList<Person>();
+		Person p;
+		for (Person person : pl) {
+			p = PersonFactory.CreatePerson((person.getNationality().getNationality()), person.getAmount());// "reset" nationality and currency to original and fill in eur amount
+			p.setAmount(getOwnCurrency(p)); // change eur amount to own currency
+			personList.add(p);
+		}
+		return personList;
 	}
 	
 	//generate random person
@@ -73,14 +101,13 @@ public class TestOpdracht7
 	    return bd.doubleValue();
 	}
 	
-	
 	//Convert person's amount to Euro
-	public static Double getCurrencyEuro (Person p) {
-		return adapter.getAmountEuro(p.getAmount());
+	public static double getCurrencyEuro (Person p) {
+		return adapter.getAmountEuro(p);
 	}
 	//Convert euro amount back to person's own currency
-	public static Double getOwnCurrency (Double euro) {
-		return adapter.getAmountForeign(euro);
+	public static double getOwnCurrency (Person p) {
+		return adapter.getAmountForeign(p);
 	}
 
 }

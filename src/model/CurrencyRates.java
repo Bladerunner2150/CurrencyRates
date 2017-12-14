@@ -41,7 +41,7 @@ public class CurrencyRates
 		return currencyRates;
 	}
 
-	public Double getValue(String key)
+	public double getValue(String key)
 	{
 		return Double.parseDouble(props.getProperty(key));
 	}

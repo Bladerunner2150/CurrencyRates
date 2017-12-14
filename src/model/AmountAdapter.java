@@ -10,21 +10,21 @@ package model;
  * @purpose Class om omrekeningen van valuta te doen
  *
  */
-public final class AmountAdapter extends Nationality implements IAmount
+public final class AmountAdapter implements IAmount
 {
 	private CurrencyRates currencyRates = CurrencyRates.getCurrencyRates();
 
 	@Override
-	public Double getAmountForeign(Double amountEuro)
+	public double getAmountForeign(Person person)
 	{
-		return amountEuro * currencyRates.getValue(getCurrency());
+		return person.getAmount() * currencyRates.getValue(person.getNationality().getCurrency());
 
 	}
 
 	@Override
-	public Double getAmountEuro(Double amountForeign)
+	public double getAmountEuro(Person person)
 	{
-		return amountForeign / currencyRates.getValue(getCurrency());
+		return person.getAmount() / currencyRates.getValue(person.getNationality().getCurrency());
 		
 	}
 	

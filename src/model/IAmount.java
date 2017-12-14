@@ -12,7 +12,7 @@ package model;
  */
 public interface IAmount
 {
-	Double getAmountForeign(Double amountEuro);
-	Double getAmountEuro(Double amountForeign);
+	double getAmountForeign(Person person);
+	double getAmountEuro(Person person);
 
 }
