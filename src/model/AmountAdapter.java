@@ -15,16 +15,16 @@ public class AmountAdapter extends Nationality implements IAmount
 	private CurrencyRates currencyRates = CurrencyRates.getCurrencyRates();
 
 	@Override
-	public void getAmountForeign(Double amountEuro)
+	public Double getAmountForeign(Double amountEuro)
 	{
-		// TODO Auto-generated method stub
+		return amountEuro * currencyRates.getValue(getCurrency());
 
 	}
 
 	@Override
-	public void getAmountEuro(Double amountForeign)
+	public Double getAmountEuro(Double amountForeign)
 	{
-		// TODO Auto-generated method stub
+		return amountForeign / currencyRates.getValue(getCurrency());
 		
 	}
 	
