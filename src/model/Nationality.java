@@ -63,8 +63,7 @@ public class Nationality
 	 */
 	@Override
 	public String toString() {
-		return "Nationality [getNationality()=" + getNationality() + ", getLanguage()=" + getLanguage()
-				+ ", getCurrency()=" + getCurrency() + "]";
+		return getNationality() + ", Language = " + getLanguage()	+ ", Currency = " + getCurrency() + " ";
 	}
 	
 	
