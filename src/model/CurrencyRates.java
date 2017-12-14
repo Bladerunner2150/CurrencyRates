@@ -23,7 +23,7 @@ public class CurrencyRates
 	protected CurrencyRates() throws IOException
 	{
 		props = new Properties();
-		props.load(new FileInputStream("rates.properties"));
+		props.load(new FileInputStream("src/rates.properties"));
 	}
 
 	public static CurrencyRates getCurrencyRates()

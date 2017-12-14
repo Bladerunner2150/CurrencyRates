@@ -10,7 +10,7 @@ package model;
  * @purpose Class om omrekeningen van valuta te doen
  *
  */
-public class AmountAdapter extends Nationality implements IAmount
+public final class AmountAdapter extends Nationality implements IAmount
 {
 	private CurrencyRates currencyRates = CurrencyRates.getCurrencyRates();
 

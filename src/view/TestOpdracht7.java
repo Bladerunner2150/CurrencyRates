@@ -8,6 +8,7 @@ import java.math.RoundingMode;
 import java.util.LinkedList;
 import java.util.Random;
 
+import model.AmountAdapter;
 import model.Person;
 import util.PersonFactory;
 
@@ -21,6 +22,7 @@ import util.PersonFactory;
 public class TestOpdracht7
 {
 	private static Random random = new Random();
+	private static AmountAdapter adapter = new AmountAdapter();
 	
 	
 	/**
@@ -39,7 +41,8 @@ public class TestOpdracht7
 		}
 		
 		for (Person person : persons) {
-			System.out.println(person.toString());
+			Double euro = getCurrencyEuro(person);
+			System.out.println(person.toString() + getOwnCurrency(euro) + " - EUR: " + euro);
 		}
 		
 	}
@@ -68,6 +71,16 @@ public class TestOpdracht7
 	    BigDecimal bd = new BigDecimal(Double.toString(value));
 	    bd = bd.setScale(places, RoundingMode.HALF_UP);
 	    return bd.doubleValue();
+	}
+	
+	
+	//Convert person's amount to Euro
+	public static Double getCurrencyEuro (Person p) {
+		return adapter.getAmountEuro(p.getAmount());
+	}
+	//Convert euro amount back to person's own currency
+	public static Double getOwnCurrency (Double euro) {
+		return adapter.getAmountForeign(euro);
 	}
 
 }

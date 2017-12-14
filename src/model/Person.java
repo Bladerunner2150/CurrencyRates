@@ -63,7 +63,7 @@ public class Person
 	@Override
 	public String toString()
 	{
-		return "Person: nationality = " + getNationality().toString() + getAmount();
+		return "Person: nationality = " + getNationality().toString() /*+ getAmount()*/;
 	}
 
 }
