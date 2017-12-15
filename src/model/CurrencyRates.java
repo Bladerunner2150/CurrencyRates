@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * @author Bart Taelemans
+ * @author Bart Taelemans en Jeroen Salaets
  * @date 4 dec. 2017
  * @project Opdracht7
- * @purpose Nationaliteiten bijhouden en properties munten ophalen (zie
- *          SampleProperties) (singleton pattern)
+ * @purpose Properties van munteenheden ophalen voor conversie (singleton
+ *          pattern)
  *
  */
 public class CurrencyRates

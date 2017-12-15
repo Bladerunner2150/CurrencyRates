@@ -4,7 +4,7 @@
 package model;
 
 /**
- * @author Bart Taelemans
+ * @author Bart Taelemans en Jeroen Salaets
  * @date 11 dec. 2017
  * @project Opdracht7
  * @purpose Class om omrekeningen van valuta te doen
@@ -25,9 +25,7 @@ public final class AmountAdapter implements IAmount
 	public double getAmountEuro(Person person)
 	{
 		return person.getAmount() / currencyRates.getValue(person.getNationality().getCurrency());
-		
+
 	}
-	
-	
 
 }

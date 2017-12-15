@@ -7,7 +7,7 @@ import model.Nationality;
 import model.Person;
 
 /**
- * @author Bart Taelemans
+ * @author Bart Taelemans en Jeroen Salaets
  * @date 4 dec. 2017
  * @project Opdracht7
  * @purpose Personen aanmaken
@@ -15,7 +15,8 @@ import model.Person;
  */
 public class PersonFactory
 {
-	public static Person CreatePerson (Nationality nat, double amt) {
+	public static Person CreatePerson(Nationality nat, double amt)
+	{
 		Person person = new Person(nat, amt);
 		return person;
 	}

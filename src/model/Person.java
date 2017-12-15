@@ -4,7 +4,7 @@
 package model;
 
 /**
- * @author Bart Taelemans
+ * @author Bart Taelemans en Jeroen Salaets
  * @date 4 dec. 2017
  * @project Opdracht7
  * @purpose Gegevens persoon bijhouden
@@ -15,11 +15,12 @@ public class Person
 	private Nationality nationality;
 	private double amount;
 
-	
-	public Person(Nationality nat, double amt) {
+	public Person(Nationality nat, double amt)
+	{
 		this.setNationality(nat);
 		this.setAmount(amt);
 	}
+
 	/**
 	 * @return the nationality
 	 */
@@ -63,7 +64,8 @@ public class Person
 	@Override
 	public String toString()
 	{
-		return "Person: Nationality = " + getNationality().toString() + String.format("%.2f",getAmount()) + System.lineSeparator();
+		return "Person: Nationality = " + getNationality().toString() + String.format("%.2f", getAmount())
+				+ System.lineSeparator();
 	}
 
 }

@@ -4,7 +4,7 @@
 package model;
 
 /**
- * @author Bart Taelemans
+ * @author Bart Taelemans en Jeroen Salaets
  * @date 4 dec. 2017
  * @project Opdracht7
  * @purpose Gegevens nationaliteit bijhouden (state pattern)
@@ -50,22 +50,25 @@ public class Nationality
 		this.language = language;
 	}
 
-	public String getCurrency() {
+	public String getCurrency()
+	{
 		return currency;
 	}
 
-	public void setCurrency(String currency) {
+	public void setCurrency(String currency)
+	{
 		this.currency = currency;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
-	public String toString() {
-		return getNationality() + ", Language = " + getLanguage()	+ ", Currency = " + getCurrency() + " ";
+	public String toString()
+	{
+		return getNationality() + ", Language = " + getLanguage() + ", Currency = " + getCurrency() + " ";
 	}
-	
-	
 
 }
