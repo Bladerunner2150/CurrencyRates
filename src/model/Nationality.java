@@ -10,7 +10,7 @@ package model;
  * @purpose Gegevens nationaliteit bijhouden (state pattern)
  *
  */
-public class Nationality
+public abstract class Nationality
 {
 	private String nationality;
 	private String language;
