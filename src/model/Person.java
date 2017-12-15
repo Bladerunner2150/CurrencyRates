@@ -63,7 +63,7 @@ public class Person
 	@Override
 	public String toString()
 	{
-		return "Person: nationality = " + getNationality().toString() + String.format("%.2f",getAmount()) + System.lineSeparator();
+		return "Person: Nationality = " + getNationality().toString() + String.format("%.2f",getAmount()) + System.lineSeparator();
 	}
 
 }

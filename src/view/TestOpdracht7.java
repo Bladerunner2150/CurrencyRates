@@ -8,8 +8,15 @@ import java.math.RoundingMode;
 import java.util.LinkedList;
 import java.util.Random;
 
+import model.American;
 import model.AmountAdapter;
+import model.Belgian;
+import model.British;
+import model.Nationality;
+import model.Norwegian;
 import model.Person;
+import model.Swedish;
+import model.Swiss;
 import util.PersonFactory;
 
 /**
@@ -24,22 +31,21 @@ public class TestOpdracht7
 	private static Random random = new Random();
 	private static AmountAdapter adapter = new AmountAdapter();
 	private static LinkedList<Person> persons;
-	private static LinkedList<Person> personsInEur;
-	private static LinkedList<Person> personsInOwnCurrency;
+	private static LinkedList<Person> listToShow;
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args)
-	{
-		// TODO method to change person to new nationality
-		
-		persons = generatePersonlist();	
-		personsInEur = generatePersonlistInEur(persons);	
-		personsInOwnCurrency = revertBackToOwnCurrency(personsInEur);
-		System.out.println("Generated list:" + System.lineSeparator() + persons);	
-		System.out.println("List of people with conversion to EUR:" + System.lineSeparator() + personsInEur);
-		System.out.println("List of people back to own Currency:" + System.lineSeparator() + personsInOwnCurrency);
+	{	
+		persons = generatePersonlist();	//generate list of random persons
+		System.out.println("Generated list:" + System.lineSeparator() + persons);
+		listToShow = generatePersonlistInEur(persons);// switch current amount in own currency to eur equivalent
+		System.out.println("List of people with conversion to EUR:" + System.lineSeparator() + listToShow);
+		listToShow = revertBackToOwnCurrency(listToShow);// switch back to own currency and equivalent amount
+		System.out.println("List of people back to own Currency:" + System.lineSeparator() + listToShow);				
+		listToShow = switchNationality(persons);// make a random person switch nationality and adapt amount to new currency
+		System.out.println("\n List with one person who changed nationality:" + System.lineSeparator() + listToShow);		
 	}
 	
 	
@@ -51,40 +57,75 @@ public class TestOpdracht7
 		}
 		return personList;
 	}
-	
 	//generate list with Persons but currency set in EUR + amount = EUR equivalent
 	public static LinkedList<Person> generatePersonlistInEur(LinkedList<Person> pl){
-		LinkedList<Person> personList= new LinkedList<Person>();
-		Person p;
 		for (Person person : pl) {
-			p = PersonFactory.CreatePerson((person.getNationality().getNationality()), getCurrencyEuro(person));// keep nationality but change amount to euro equivalent
-			p.getNationality().setCurrency("EUR");// set currency to eur
-			personList.add(p);
+			person.setAmount(getCurrencyEuro(person));
+			person.getNationality().setCurrency("EUR");// set currency to eur
 		}
-		return personList;
+		return pl;
 	}
 	//generate list with Persons where currency and amount is reverted back to own currency
 	public static LinkedList<Person> revertBackToOwnCurrency(LinkedList<Person> pl){
-		LinkedList<Person> personList= new LinkedList<Person>();
-		Person p;
 		for (Person person : pl) {
-			p = PersonFactory.CreatePerson((person.getNationality().getNationality()), person.getAmount());// "reset" nationality and currency to original and fill in eur amount
-			p.setAmount(getOwnCurrency(p)); // change eur amount to own currency
-			personList.add(p);
+			person.setNationality(getNationality(person.getNationality().getNationality()));// "reset" nationality and currency to original
+			person.setAmount(getOwnCurrency(person)); // change eur amount to own currency
 		}
-		return personList;
+		return pl;
+	}
+	//switch nationality for random person in list
+	public static LinkedList<Person> switchNationality(LinkedList<Person> pl) {
+		int index = random.nextInt(pl.size());
+		Person person2 = pl.get(index);// get random person from list
+		person2.setAmount(getCurrencyEuro(person2));// first conversion to eur before conversion to new currency
+		person2.setNationality(getNationality(getCountry()));// set nationality of person to new nationality
+		person2.setAmount(getOwnCurrency(person2));// conversion of amount in eur to new currency		
+		pl.set(index, person2);		
+		return pl;
 	}
 	
 	//generate random person
 	public static Person generatePerson() {
-		Person person = PersonFactory.CreatePerson(getNationality(), round(returnRandomDouble(0, 100),2));
+		Person person = PersonFactory.CreatePerson(getNationality(getCountry()), round(returnRandomDouble(0, 100),2));
 		return person;
 	}
-	//generate random nationality
-	public static String getNationality() {
+	//generate random nationalityString
+	public static String getCountry() {
 		String nationalities[] = { "American","Belgian", "British", "Norwegian", "Swedish", "Swiss"};
 		return nationalities[random.nextInt(nationalities.length)];
 	}
+	
+	//generate nationality
+	public static Nationality getNationality(String country) {
+		
+		Nationality nationality;
+		
+		switch (country) {
+		case "American":
+			nationality = new American();
+			break;
+		case "Belgian":
+			nationality = new Belgian();
+			break;
+		case "British":
+			nationality = new British();
+			break;
+		case "Norwegian":
+			nationality = new Norwegian();
+			break;
+		case "Swedish":
+			nationality = new Swedish();
+			break;
+		case "Swiss":
+			nationality = new Swiss();
+			break;
+		default:
+			nationality = null;
+			break;
+		}
+		return nationality;
+	}
+	
 	//generate random amount
 	public static double returnRandomDouble(int min, int max) {
 		double range = max - min;
