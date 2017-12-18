@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="model.CurrencyRates" project="CurrencyRates" 
     file="/CurrencyRates/src/model/CurrencyRates.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="198" x="356" y="697"/>    
+    <position height="142" width="228" x="115" y="678"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="model.British" project="CurrencyRates" 
     file="/CurrencyRates/src/model/British.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="471" y="998"/>    
+    <position height="88" width="104" x="286" y="985"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <interface id="3" language="java" name="model.IAmount" project="CurrencyRates" 
     file="/CurrencyRates/src/model/IAmount.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="191" x="604" y="697"/>    
+    <position height="106" width="285" x="393" y="678"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </interface>  
   <class id="4" language="java" name="model.Nationality" project="CurrencyRates" 
     file="/CurrencyRates/src/model/Nationality.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="261" width="149" x="835" y="697"/>    
+    <position height="267" width="173" x="718" y="678"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="model.AmountAdapter" project="CurrencyRates" 
     file="/CurrencyRates/src/model/AmountAdapter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="191" x="604" y="468"/>    
+    <position height="124" width="285" x="243" y="442"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="model.American" project="CurrencyRates" 
     file="/CurrencyRates/src/model/American.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="598" y="998"/>    
+    <position height="88" width="104" x="430" y="985"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="model.Swiss" project="CurrencyRates" file="/CurrencyRates/src/model/Swiss.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="725" y="998"/>    
+    <position height="88" width="104" x="574" y="985"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="model.Norwegian" project="CurrencyRates" 
     file="/CurrencyRates/src/model/Norwegian.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="852" y="998"/>    
+    <position height="88" width="104" x="718" y="985"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="view.TestOpdracht7" project="CurrencyRates" 
     file="/CurrencyRates/src/view/TestOpdracht7.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="358" x="835" y="113"/>    
+    <position height="286" width="422" x="568" y="116"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,56 +84,54 @@
   </class>  
   <class id="10" language="java" name="model.Swedish" project="CurrencyRates" 
     file="/CurrencyRates/src/model/Swedish.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="979" y="998"/>    
+    <position height="88" width="104" x="862" y="985"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="11" language="java" name="util" project="CurrencyRates" file="/CurrencyRates/src/util" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="50" width="101" x="293" y="113"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <class id="12" language="java" name="model.Belgian" project="CurrencyRates" 
+  <class id="11" language="java" name="model.Belgian" project="CurrencyRates" 
     file="/CurrencyRates/src/model/Belgian.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="1106" y="998"/>    
+    <position height="88" width="104" x="1006" y="985"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="util.PersonFactory" project="CurrencyRates" 
+  <class id="12" language="java" name="util.PersonFactory" project="CurrencyRates" 
     file="/CurrencyRates/src/util/PersonFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="220" x="434" y="113"/>    
+    <position height="106" width="260" x="191" y="116"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <package id="14" language="java" name="view" project="CurrencyRates" file="/CurrencyRates/src/view" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="50" width="101" x="694" y="113"/>    
-    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
-  </package>  
-  <class id="15" language="java" name="model.Person" project="CurrencyRates" file="/CurrencyRates/src/model/Person.java" 
+  <class id="13" language="java" name="model.Person" project="CurrencyRates" file="/CurrencyRates/src/model/Person.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="170" x="835" y="468"/>    
+    <position height="196" width="200" x="568" y="442"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <generalization id="14">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="15">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
   <association id="16">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="17" name="nationality"/>      
-      <multiplicity id="18" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="17" name="persons"/>      
+      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="19">    
@@ -141,67 +139,59 @@
       <attribute id="20" name="listToShow"/>      
       <multiplicity id="21" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="13" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="22">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <association id="23">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="24" name="currencyRates"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="27" name="currencyRates"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="29">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="30">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="31">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="32">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="33">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="34" name="persons"/>      
-      <multiplicity id="35" minimum="0" maximum="2147483647"/>    
+  <association id="23">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="24" name="adapter"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="6"/>    
+  <association id="26">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="27" name="nationality"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="30" name="currencyRates"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <realization id="37">    
+  <generalization id="33">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <realization id="35">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="3"/>  
   </realization>  
-  <association id="38">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="39" name="adapter"/>      
-      <multiplicity id="40" minimum="0" maximum="1"/>    
+  <association id="36">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="37" name="currencyRates"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
