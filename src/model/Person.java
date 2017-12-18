@@ -14,6 +14,7 @@ public class Person
 {
 	private Nationality nationality;
 	private double amount;
+	IAmount adapter = new AmountAdapter();
 
 	public Person(Nationality nat, double amt)
 	{
@@ -43,7 +44,7 @@ public class Person
 	 */
 	public double getAmount()
 	{
-		return amount; // hier conversie doen (via adapter/muntconversie) van euro naar originele
+		return adapter.getAmountForeign(amount, nationality); // hier conversie doen (via adapter/muntconversie) van euro naar originele
 						// currency (amount staat al in euro door setter)
 	}
 
@@ -51,9 +52,9 @@ public class Person
 	 * @param amount
 	 *            the amount to set
 	 */
-	public void setAmount(double amount)
+	public void setAmount(double amt)
 	{
-		this.amount = amount; // hier conversie doen van originele currency van persoon naar euro
+		this.amount = adapter.getAmountEuro(amt, getNationality()); // hier conversie doen van originele currency van persoon naar euro
 	}
 
 	/*

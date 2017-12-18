@@ -9,7 +9,6 @@ import java.util.LinkedList;
 import java.util.Random;
 
 import model.American;
-import model.AmountAdapter;
 import model.Belgian;
 import model.British;
 import model.Nationality;
@@ -29,7 +28,6 @@ import util.PersonFactory;
 public class TestOpdracht7
 {
 	private static Random random = new Random();
-	private static AmountAdapter adapter = new AmountAdapter();
 	private static LinkedList<Person> persons;
 	private static LinkedList<Person> listToShow;
 
@@ -44,8 +42,7 @@ public class TestOpdracht7
 		System.out.println("List of people with conversion to EUR:" + System.lineSeparator() + listToShow);
 		listToShow = revertBackToOwnCurrency(listToShow);// switch back to own currency and equivalent amount
 		System.out.println("List of people back to own Currency:" + System.lineSeparator() + listToShow);
-		listToShow = switchNationality(persons);// make a random person switch nationality and adapt amount to new
-												// currency
+		listToShow = switchNationality(persons);// make a random person switch nationality and adapt amount to new currency
 		System.out.println("\n List with one person who changed nationality:" + System.lineSeparator() + listToShow);
 	}
 
@@ -65,7 +62,6 @@ public class TestOpdracht7
 	{
 		for (Person person : pl)
 		{
-			person.setAmount(getCurrencyEuro(person));
 			person.getNationality().setCurrency("EUR");// set currency to eur
 		}
 		return pl;
@@ -79,7 +75,6 @@ public class TestOpdracht7
 		{
 			person.setNationality(getNationality(person.getNationality().getNationality()));// "reset" nationality and
 																							// currency to original
-			person.setAmount(getOwnCurrency(person)); // change eur amount to own currency
 		}
 		return pl;
 	}
@@ -89,9 +84,8 @@ public class TestOpdracht7
 	{
 		int index = random.nextInt(pl.size());
 		Person person2 = pl.get(index);// get random person from list
-		person2.setAmount(getCurrencyEuro(person2));// first conversion to eur before conversion to new currency
+		person2.getNationality().setCurrency("EUR");// first conversion to eur before conversion to new currency
 		person2.setNationality(getNationality(getCountry()));// set nationality of person to new nationality
-		person2.setAmount(getOwnCurrency(person2));// conversion of amount in eur to new currency
 		pl.set(index, person2);
 		return pl;
 	}
@@ -162,18 +156,6 @@ public class TestOpdracht7
 		BigDecimal bd = new BigDecimal(Double.toString(value));
 		bd = bd.setScale(places, RoundingMode.HALF_UP);
 		return bd.doubleValue();
-	}
-
-	// Convert person's amount to Euro
-	public static double getCurrencyEuro(Person p)
-	{
-		return adapter.getAmountEuro(p);
-	}
-
-	// Convert euro amount back to person's own currency
-	public static double getOwnCurrency(Person p)
-	{
-		return adapter.getAmountForeign(p);
 	}
 
 }

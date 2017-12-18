@@ -15,16 +15,16 @@ public final class AmountAdapter implements IAmount
 	private CurrencyRates currencyRates = CurrencyRates.getCurrencyRates();
 
 	@Override
-	public double getAmountForeign(Person person)
+	public double getAmountForeign(double amount, Nationality nationality)
 	{
-		return person.getAmount() * currencyRates.getValue(person.getNationality().getCurrency());
+		return amount * currencyRates.getValue(nationality.getCurrency());
 
 	}
 
 	@Override
-	public double getAmountEuro(Person person)
+	public double getAmountEuro(double amount, Nationality nationality)
 	{
-		return person.getAmount() / currencyRates.getValue(person.getNationality().getCurrency());
+		return amount / currencyRates.getValue(nationality.getCurrency());
 
 	}
 

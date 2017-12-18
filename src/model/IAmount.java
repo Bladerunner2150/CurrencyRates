@@ -12,8 +12,8 @@ package model;
  */
 public interface IAmount
 {
-	double getAmountForeign(Person person);
+	double getAmountForeign(double amount, Nationality nationality);
 
-	double getAmountEuro(Person person);
+	double getAmountEuro(double amount, Nationality nationality);
 
 }
